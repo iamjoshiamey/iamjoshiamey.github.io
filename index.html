@@ -13,11 +13,13 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <style>
-        /* Hero background */
-        #lead {
+        /* Hero background — override template's default purple */
+        #lead,
+        body #lead {
             background-image: url('images/msu.jpg') !important;
-            background-size: cover;
-            background-position: center;
+            background-color: transparent !important;
+            background-size: cover !important;
+            background-position: center !important;
         }
 
         /* Social links in lead */
@@ -242,7 +244,7 @@
                 <div class="project shadow-large project-featured" style="position:relative;">
                     <div class="project-featured-badge">&#9733; Current Research</div>
                     <div class="project-image">
-                        <img src="images/four_manifold.jpg" height="350" alt="Lasagna Modules" />
+                        <img src="images/lasagnamodules.png" height="350" alt="Lasagna Modules" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
