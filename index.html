@@ -13,11 +13,88 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <style>
-        /* Fix the background image for the #lead section */
+        /* Hero background */
         #lead {
-            background-image: url('images/msu.jpg');
+            background-image: url('images/msu.jpg') !important;
             background-size: cover;
             background-position: center;
+        }
+
+        /* Social links in lead */
+        .lead-social {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+        .lead-social a {
+            color: #fff;
+            font-size: 1.5rem;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+        .lead-social a:hover {
+            opacity: 1;
+        }
+
+        /* Featured / current project badge */
+        .project-featured {
+            border: 2px solid #3498db;
+        }
+        .project-featured-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: #3498db;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 3px;
+            z-index: 10;
+        }
+
+        /* About section: profile photo */
+        .about-photo {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #3498db;
+            display: block;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 4px 18px rgba(52,152,219,0.18);
+        }
+
+        /* Footer social links */
+        .footer-social {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 16px;
+            justify-content: flex-end;
+        }
+        .footer-social a {
+            color: #74808a;
+            font-size: 1.3rem;
+            transition: color 0.2s;
+        }
+        .footer-social a:hover {
+            color: #3498db;
+        }
+
+        /* Subtle accent underline on section headings */
+        .heading::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #3498db;
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
         }
     </style>
 </head>
@@ -27,6 +104,7 @@
         <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
     <!-- End #mobile-menu-toggle -->
+
     <header>
         <div id="mobile-menu-close">
             <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
@@ -44,9 +122,23 @@
     <div id="lead">
         <div id="lead-content">
             <h1>Amey Joshi</h1>
+            <h2>PhD Candidate in Mathematics &mdash; Michigan State University</h2>
             <br>
-            <br>
-            <a href="amey_cv.pdf" target="_blank" class="btn-rounded-white">Download Resume</a>
+            <a href="amey_cv.pdf" target="_blank" class="btn-rounded-white">Download CV</a>
+            <div class="lead-social">
+                <a href="https://www.linkedin.com/in/amey-joshi-7b9764187/" target="_blank" title="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/iamjoshiamey" target="_blank" title="GitHub">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="https://directory.natsci.msu.edu/directory/Profiles/Person/101497" target="_blank" title="MSU Directory">
+                    <i class="fa fa-university"></i>
+                </a>
+                <a href="https://mathscinet.ams.org/mathscinet/author?authorId=1573350" target="_blank" title="MathSciNet">
+                    <i class="fa fa-book"></i>
+                </a>
+            </div>
         </div>
         <!-- End #lead-content -->
 
@@ -61,60 +153,81 @@
     </div>
     <!-- End #lead -->
 
-       <div id="about">
+    <div id="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4" style="text-align:center;">
                     <h2 class="heading">About Me</h2>
+                    <img src="images/msu.jpg" alt="Amey Joshi" class="about-photo" />
+                    <p style="margin-top:10px;">
+                        <a href="https://www.linkedin.com/in/amey-joshi-7b9764187/" target="_blank" style="margin-right:10px; color:#3498db;"><i class="fa fa-linkedin fa-lg"></i></a>
+                        <a href="https://github.com/iamjoshiamey" target="_blank" style="margin-right:10px; color:#3498db;"><i class="fa fa-github fa-lg"></i></a>
+                        <a href="https://directory.natsci.msu.edu/directory/Profiles/Person/101497" target="_blank" style="color:#3498db;"><i class="fa fa-university fa-lg"></i></a>
+                    </p>
                 </div>
                 <div class="col-md-8">
                     <p>
-                        Hi, I am Amey (Aa+May+Yeah) Joshi, born and raised in Kolhapur, India. I am currently a math <a href="https://math.msu.edu/directory/PersonalPage?id=111121579">graduate student</a> at Michigan State University. Currently I am working Heegard Floer, 4-manifold theory and guage theory. I am co-advised by Prof. Matthew Hedden and Dr. Matthew Stoffregen. Previousluy I was a student at <a href="https://www.iiserpune.ac.in">IISER Pune</a>, specializing in mathematics. I aspire to become a mathematician.
-My MS thesis project was under <a href="https://uwaterloo.ca/pure-mathematics/about/people/doug-park">Prof. B. Doug Park</a> and <a href="https://sites.google.com/view/mainakpoddar/home_1">Prof. Mainak Poddar</a>. We worked on abelian brnached covers of symplectic four manifolds. Our work was published in <a href="https://www.degruyter.com/document/doi/10.1515/advgeom-2023-0012/html?lang=en">Advances of Geometry</a>.
-You can check out my <a href="https://mathscinet.ams.org/mathscinet/author?authorId=1573350">Mathscinet profile</a>. In my spare time, I like to do acrylic painting, play football/soccer and play Harmonica. I also am interested in the History of mathematics, <a href="https://docs.google.com/presentation/d/1qgaJ9OQav8vjsLBKrwcSPmVu3ZJPDuF9/edit?usp=sharing&ouid=113903044440633796304&rtpof=true&sd=true">here</a> is a link to the presentation I gave to school students on the History of art, cartography, and its relations to mathematics.
+                        Hi, I am Amey (Aa+May+Yeah) Joshi. I am currently a PhD candidate at
+                        <a href="https://directory.natsci.msu.edu/directory/Profiles/Person/101497">Michigan State University</a>,
+                        co-advised by Matthew Hedden and Matthew Stoffregen.
+                        My dissertation lies at the intersection of low-dimensional topology, TQFTs, and algebraic techniques.
+                        More precisely, I work on Skein Lasagna modules and their applications to four-manifold theory.
+                        I am also working on quantum error correction, and specifically on how topological techniques can be applied to construct efficient quantum codes.
+                    </p>
+                    <p>
+                        Previously, I completed a BS-MS dual degree in Mathematics from <a href="https://www.iiserpune.ac.in">IISER Pune</a>.
+                        My MS thesis, completed under <a href="https://uwaterloo.ca/pure-mathematics/about/people/doug-park">Prof. B. Doug Park</a> and
+                        <a href="https://sites.google.com/view/mainakpoddar/home_1">Prof. Mainak Poddar</a>, concerned abelian branched covers of symplectic four-manifolds,
+                        and was published in <a href="https://www.degruyter.com/document/doi/10.1515/advgeom-2023-0012/html?lang=en">Advances in Geometry</a>.
+                    </p>
+                    <p>
+                        You can find my <a href="https://mathscinet.ams.org/mathscinet/author?authorId=1573350">MathSciNet profile</a> here.
+                        Outside of mathematics, I enjoy acrylic painting, football/soccer, and playing the harmonica.
+                        I am also interested in the history of mathematics &mdash;
+                        <a href="https://docs.google.com/presentation/d/1qgaJ9OQav8vjsLBKrwcSPmVu3ZJPDuF9/edit?usp=sharing&ouid=113903044440633796304&rtpof=true&sd=true">here</a>
+                        is a presentation I gave to school students on the history of art, cartography, and their relationship to mathematics.
                     </p>
                 </div>
             </div>
         </div>
     </div>
     <!-- End #about -->
-     <div id="education">
+
+    <div id="education">
         <h2 class="heading">Education</h2>
         <div class="education-block">
             <h3>Michigan State University</h3>
-            <span class="education-date">August 2022 -  </span>
-            <h4>Graduate student (Mathematics)</h4>
+            <span class="education-date">August 2022 &ndash; Present</span>
+            <h4>PhD Candidate (Mathematics)</h4>
             <p>
-                Interests- Symplectic Toplogy, Four Manifolds Theory
+                Research areas: Skein Lasagna Modules, Low-Dimensional Topology, TQFTs, Quantum Error Correction
             </p>
         </div>
-
         <!-- End .education-block -->
-	<div class="education-block">
+
+        <div class="education-block">
             <h3>IISER Pune</h3>
-            <span class="education-date">August 2017 - May 2022 </span>
-            <h4>BS-MS student (Mathematics)</h4>
+            <span class="education-date">August 2017 &ndash; May 2022</span>
+            <h4>BS-MS (Mathematics)</h4>
             <p>
-                Math subject GPA-9.6/10
+                Math subject GPA: 9.6/10
             </p>
         </div>
-
         <!-- End .education-block -->
+
         <div class="education-block">
             <h3>Vivekanand College, Kolhapur</h3>
-            <span class="education-date">July 2015 -June 2017</span>
-            <h4>Junior-College</h4>
+            <span class="education-date">July 2015 &ndash; June 2017</span>
+            <h4>Junior College</h4>
         </div>
         <!-- End .education-block -->
 
         <div class="education-block">
-            <h3>S.M.Lohia High School, Kolhapur</h3>
-            <span class="education-date">June 2009 - April 2015</span>
+            <h3>S.M. Lohia High School, Kolhapur</h3>
+            <span class="education-date">June 2009 &ndash; April 2015</span>
             <h4>High School</h4>
             <ul>
-                <li>
-                    10th standard SSC exam percentage - 96%
-                </li>
+                <li>10th standard SSC exam: 96%</li>
             </ul>
         </div>
     </div>
@@ -124,110 +237,151 @@ You can check out my <a href="https://mathscinet.ams.org/mathscinet/author?autho
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="row">
-               <div class="project shadow-large">
+
+                <!-- CURRENT / FEATURED PROJECT -->
+                <div class="project shadow-large project-featured" style="position:relative;">
+                    <div class="project-featured-badge">&#9733; Current Research</div>
                     <div class="project-image">
-                        <img src="images/four_manifold.jpg" height="350"  />
+                        <img src="images/four_manifold.jpg" height="350" alt="Lasagna Modules" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Abelian branched Covers and Symplectcic geography problem</h3>
+                        <h3>Spectral Sequences in Lasagna Modules</h3>
                         <p>
-                            This was my MS thesis project under supervision of <a href="https://sites.google.com/view/mainakpoddar">Prof. Mainak Poddar</a> and <a href="http://www.math.uwaterloo.ca/~bdpark/">Prof.Doug Park</a>. I built my prerequisites in four manifold theory and Seiberg-Witten theory from the books - "Four manifolds and Kirby calculus" and "Notes on Seiberg Witten theory" by Liviu I. Nicolaescu. I also built my background in symplectic topology by reading Salamon-McDuff's book on the same and learning various surgeries in the symplectic category. Right now we are working on a project to construct exotic symplectic simply coneected four manifolds. The idea of using branched covering techniques in algbraic geometry to construct symplectic exotic manifolds is previously explored in the following <a href="https://www.cambridge.org/core/journals/canadian-mathematical-bulletin/article/geography-of-simply-connected-nonspin-symplectic-4manifolds-with-positive-signature-ii/285C4BAD31A725E7E11D441C881A6C9A">paper</a>. The idea if to first construct complex surface and prove it is Lefschtez fibration to show it is symplectic manifold. Then using different surgeries, making it simply connected with minimal changes in signature. Then this manifold is exotic follwos from Taubes theorem on seiberg witten invariants of symplectic four manifolds. We improved the asymptotic formula mentioned in the previous paper. My thesis can be found <a href="http://dr.iiserpune.ac.in:8080/xmlui/handle/123456789/6845">Here</a> 
-                      </p>
-                    </div>
-                    <!-- End .project-info -->
-		    
-                </div>
-                <!-- End .project -->
-		    
-		    
-		    
-		    
-		    <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/h-cobordism.png"  />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>h-cobordism Theorem</h3>
-                        <p>
-                            This was a semester project of FALL 2021 done under the supervision of <a href="https://sites.google.com/view/mainakpoddar">Prof. Mainak Poddar</a> and <a href="http://www.math.uwaterloo.ca/~bdpark/">Prof.Doug Park</a>. Initially, this project was aimed at the study of four-manifolds. Later we got curious about why doesn't h-cobordism theorem hold in dimension four. Hence  I studied a detailed outline of the proof following the original paper and a nice outline in the book on four-manifolds by Scorpan. We studied the nuances which fail in dimension 4, how the h-cobordism theorem implies topological Poincare conjecture in high dimensions why does the smooth Poincare conjecture possibly fail.<br>
-I received an "O" grade for outstanding performance. For details of the project - <a href="https://drive.google.com/file/d/1I2s0ZP5XdpmqDYsUdm1GM5QTGM-KU4ga/view?usp=sharing">report</a>
+                            In this project, we show that under certain conditions, a spectral sequence of TQFTs gives rise to a corresponding spectral sequence of Lasagna modules.
+                            The paper reformulates a previously known setup for Lasagna modules into a more algebraically tractable framework, and establishes key properties of this spectral sequence construction.
+                            A preprint of the manuscript can be found <a href="https://drive.google.com/file/d/1padoEwnHWpUkNxc2oVoALb_5ffCmexAt/view?usp=sharing" target="_blank">here</a>.
                         </p>
                     </div>
                     <!-- End .project-info -->
-		    
                 </div>
-                <!-- End .project -->
-
-                
+                <!-- End .project (featured) -->
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/manifolds.jpg" height="300" />
+                        <img src="images/four_manifold.jpg" height="350" alt="Abelian Branched Covers" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Algebraic and non -algebraic Manifolds</h3>
+                        <h3>Abelian Branched Covers and the Symplectic Geography Problem</h3>
                         <p>
-                            This mini-project was done as a part of the algebraic geometry course in FALL 2021. I studied the relation between classical variety theory, scheme theory. In the end, I examined complex non-singular algebraic varieties and their association with the category of complex manifolds. Details of the project can be found <a href="https://drive.google.com/file/d/1_10PdyTR8yJtdy9-qhp9jtc-RbBW06BI/view?usp=sharing">here.</a>
+                            This was my MS thesis project under the supervision of <a href="https://sites.google.com/view/mainakpoddar">Prof. Mainak Poddar</a> and
+                            <a href="http://www.math.uwaterloo.ca/~bdpark/">Prof. Doug Park</a>.
+                            I developed prerequisites in four-manifold theory and Seiberg-Witten theory, and built background in symplectic topology via Salamon-McDuff.
+                            We worked on constructing exotic symplectic simply connected four-manifolds using branched covering techniques,
+                            building on an approach explored in this <a href="https://www.cambridge.org/core/journals/canadian-mathematical-bulletin/article/geography-of-simply-connected-nonspin-symplectic-4manifolds-with-positive-signature-ii/285C4BAD31A725E7E11D441C881A6C9A">paper</a>.
+                            The strategy is to construct a complex surface admitting a Lefschetz fibration (and hence symplectic structure),
+                            then apply surgeries to make it simply connected. Exoticness then follows from Taubes' theorem on Seiberg-Witten invariants of symplectic four-manifolds.
+                            We improved the asymptotic formula from the earlier work. The thesis is available <a href="http://dr.iiserpune.ac.in:8080/xmlui/handle/123456789/6845">here</a>.
                         </p>
                     </div>
                     <!-- End .project-info -->
                 </div>
                 <!-- End .project -->
-		 <div class="project shadow-large">
+
+                <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/symplectic.png" height="300" />
+                        <img src="images/h-cobordism.png" alt="h-Cobordism Theorem" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>h-Cobordism Theorem</h3>
+                        <p>
+                            This semester project (Fall 2021) was carried out under the supervision of
+                            <a href="https://sites.google.com/view/mainakpoddar">Prof. Mainak Poddar</a> and
+                            <a href="http://www.math.uwaterloo.ca/~bdpark/">Prof. Doug Park</a>.
+                            We investigated why the h-cobordism theorem fails in dimension four, how it implies the topological Poincar&eacute; conjecture in higher dimensions,
+                            and why the smooth Poincar&eacute; conjecture may fail in dimension four.
+                            I received an "O" (Outstanding) grade for this project.
+                            Project report: <a href="https://drive.google.com/file/d/1I2s0ZP5XdpmqDYsUdm1GM5QTGM-KU4ga/view?usp=sharing">here</a>.
+                        </p>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/manifolds.jpg" height="300" alt="Algebraic and Non-Algebraic Manifolds" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Algebraic and Non-Algebraic Manifolds</h3>
+                        <p>
+                            This mini-project was part of the algebraic geometry course in Fall 2021.
+                            I studied the relationship between classical variety theory and scheme theory,
+                            and examined complex non-singular algebraic varieties and their association with the category of complex manifolds.
+                            Project report: <a href="https://drive.google.com/file/d/1_10PdyTR8yJtdy9-qhp9jtc-RbBW06BI/view?usp=sharing">here</a>.
+                        </p>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/symplectic.png" height="300" alt="Symplectic Classes" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
                         <h3>Symplectic Classes</h3>
                         <p>
-                            This was a semester project in SPRING 2020 under <a href="https://sites.google.com/site/steventspallone/home">Dr. Steven Spallone</a>. The main aim of this project was to understand the theory of symplectic classes and their relationship with the well-known chern and Stiefel Whitney classes. The project was based on Prof. Peter May's work on the same. We took a new approach of assuming the axiomatic theory of Chern classes and proving the uniqueness and existence of the symplectic classes. We derived a new proof of the cohomology rings of the Sp(n) groups by using dual induction. In this way, previously known results can be proved by avoiding the spectral sequences.We had to use spectral sequences in the computation of the classifying spaces of these groups. I learned fiber bundle theory, obstruction theory, and various spectral sequences during this project. In the end, we carefully proved with a counterexample that the integer cohomology classes satisfying axioms of the Steenrod Squares do not exist. Becuase of this, there is no equivalent of Wu's formula in integral cohomology for symplectic classes.
- The project report can be found <a href="https://drive.google.com/file/d/1cLcqBb0dIZA376_mObPr0DaQqCGMYMw5/view?usp=sharing">here.</a>
-
+                            This semester project (Spring 2020) was done under
+                            <a href="https://sites.google.com/site/steventspallone/home">Dr. Steven Spallone</a>.
+                            The goal was to understand symplectic characteristic classes and their relationship to Chern and Stiefel-Whitney classes,
+                            following Prof. Peter May's work. We gave a new proof of the cohomology rings of the Sp(n) groups via dual induction,
+                            avoiding spectral sequences in the main argument (though they were required for classifying spaces).
+                            We also established via a careful counterexample that there is no analogue of Wu's formula for symplectic classes in integral cohomology.
+                            Project report: <a href="https://drive.google.com/file/d/1cLcqBb0dIZA376_mObPr0DaQqCGMYMw5/view?usp=sharing">here</a>.
                         </p>
                     </div>
                     <!-- End .project-info -->
                 </div>
                 <!-- End .project -->
+
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/groupoids.jfif" />
+                        <img src="images/groupoids.jfif" alt="Lie Groupoids" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
                         <h3>Study of Lie Groupoids</h3>
                         <p>
-                            This project was done as a part of Tifr-VSRP 2020 under <a href="http://www.math.tifr.res.in/~roushon/">Prof.S.K.Roushon.</a> In this project, we followed various papers of I.Moerdijk on the theory of Lie Groupoids and Orbifolds. The focus was on the study of the category of Lie Groupoids. I studied how the well-known results in algebraic topology, foliation theory, and some differential topology results can be generalized using the theory of Lie Groupoids. The project report can be found <a href="https://drive.google.com/file/d/1NMxSOvln9zn1TviJr_7EP1cNNHONdnlW/view?usp=sharing">here.</a>
+                            This project was part of TIFR-VSRP 2020, carried out under
+                            <a href="http://www.math.tifr.res.in/~roushon/">Prof. S.K. Roushon</a>.
+                            Following papers of I. Moerdijk on Lie Groupoids and Orbifolds, I studied how classical results in
+                            algebraic topology, foliation theory, and differential topology generalize to the setting of Lie Groupoids.
+                            Project report: <a href="https://drive.google.com/file/d/1NMxSOvln9zn1TviJr_7EP1cNNHONdnlW/view?usp=sharing">here</a>.
                         </p>
                     </div>
                     <!-- End .project-info -->
-                
                 </div>
                 <!-- End .project -->
+
             </div>
         </div>
     </div>
     <!-- End #projects -->
 
     <div id="skills">
-        <h2 class="heading">Interests</h2>
+        <h2 class="heading">Research Interests</h2>
         <ul>
-            <li>Geometric Topology </li> 
-            <li>Symplectic Topology </li> 
-            <li>Four Manifold theory </li> 
-            <li>Seiberg Witten Theory </li>
-            
+            <li>Skein Lasagna Modules</li>
+            <li>Low-Dimensional Topology</li>
+            <li>TQFTs</li>
+            <li>Four-Manifold Theory</li>
+            <li>Seiberg-Witten Theory</li>
+            <li>Symplectic Topology</li>
+            <li>Quantum Error Correction</li>
         </ul>
     </div>
     <!-- End #skills -->
+
     <div id="languages">
-        <h2 class="heading">Coding Languages</h2>
+        <h2 class="heading">Coding</h2>
         <ul>
             <li>Python</li>
-            <li>LATEX</li>
+            <li>LaTeX</li>
             <li>Sage</li>
         </ul>
     </div>
@@ -236,7 +390,7 @@ I received an "O" grade for outstanding performance. For details of the project 
     <div id="contact">
         <h2>Get in Touch</h2>
         <div id="contact-form">
-            <form method="POST" action="https://formspree.io/ameyj200@gmail.com">
+            <form method="POST" action="https://formspree.io/f/ameyj200@gmail.com">
                 <input type="hidden" name="_subject" value="Contact request from personal website" />
                 <input type="email" name="_replyto" placeholder="Your email" required>
                 <textarea name="message" placeholder="Your message" required></textarea>
@@ -252,13 +406,21 @@ I received an "O" grade for outstanding performance. For details of the project 
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy; 2021 Amey Joshi
+                        Copyright &copy; 2026 Amey Joshi
                     </p>
                 </div>
                 <div class="col-sm-2 top">
                     <span id="to-top">
                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
                     </span>
+                </div>
+                <div class="col-sm-5" style="padding-top:20px;">
+                    <ul class="footer-social">
+                        <li><a href="https://www.linkedin.com/in/amey-joshi-7b9764187/" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://github.com/iamjoshiamey" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://directory.natsci.msu.edu/directory/Profiles/Person/101497" target="_blank" title="MSU Directory"><i class="fa fa-university"></i></a></li>
+                        <li><a href="https://mathscinet.ams.org/mathscinet/author?authorId=1573350" target="_blank" title="MathSciNet"><i class="fa fa-book"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
