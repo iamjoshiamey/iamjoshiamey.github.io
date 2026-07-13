@@ -259,24 +259,33 @@
                 </div>
                 <!-- End .project (featured) -->
 
-                <div class="project shadow-large">
+                <div class="project shadow-large" style="overflow:visible;">
                     <div class="project-image">
-                        <img src="images/flaring.jpg" height="350" alt="Permian Basin Flaring" />
+                        <img src="images/flaring.jpg" style="width:300px; height:100%; object-fit:cover; display:block;" alt="Permian Basin Flaring" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Nowcasting Permian Basin Oil Production via Satellite Flaring Data</h3>
+                        <h3>Flaring in the Permian: What Satellites See and What Operators Report</h3>
                         <p>
                             A data science project completed as part of the Erd&#337;s Institute Data Science Boot Camp (Summer 2026),
-                            in collaboration with a team of researchers. The project investigates whether VIIRS satellite nighttime
-                            flaring data can nowcast oil production in the Permian Basin, using Texas Railroad Commission records
-                            as the ground truth. We developed ARIMAX time series models incorporating satellite radiant heat and
-                            gas transmission features, and discovered a key structural finding: the correlation between flaring and
-                            oil production broke down sharply after 2020 (r = 0.72 pre-2020, r = 0.27 post-2020), reflecting the
-                            infrastructure and regulatory decoupling in the maturing basin. Gas transmission remained a strong
-                            predictor (+18% over baseline), while real-time satellite signals provided only modest gains (~1-3%),
-                            indicating that satellite nowcasting of oil is fundamentally limited in this regime.
-                            Code and analysis available on <a href="https://github.com/Erdos-Projects/summer26-permian-flaring" target="_blank">GitHub</a>.
+                            in collaboration with Abhishek Koparde, Sabarenath Jayaprakash, and Vineeth Krishna Talasila.
+                            Every night, VIIRS satellites operated by NASA and NOAA image Earth's surface, detecting gas flaring
+                            in the Permian Basin by thermal signature. Official flaring volumes reported to the Texas Railroad Commission
+                            (RRC) suffer from a 1 to 2 month administrative lag. This project bridges that gap.
+                        </p>
+                        <p>
+                            The core success: an ARIMAX(1,1,1) model using satellite radiant heat as an exogenous regressor
+                            achieves 68.5% directional accuracy in nowcasting reported flaring volumes, compared to 56.5% for a
+                            baseline ARIMA with no satellite data, a 12 percentage point lift. The model was validated on a
+                            92-month walk-forward backtest and outperformed OLS regression, XGBoost, and naive baselines on both
+                            MAE and directional accuracy.
+                        </p>
+                        <p>
+                            A secondary investigation asked whether the same satellite signal could nowcast oil production itself.
+                            The answer revealed a structural finding: the flaring to oil relationship broke down sharply after 2020
+                            (correlation 0.86 before, 0.27 after), coinciding with major pipeline capacity coming online and the
+                            maturing of the basin. The satellite sees the waste; the throughput that tracks oil is no longer visible from orbit.
+                            Code and full analysis on <a href="https://github.com/Erdos-Projects/summer26-permian-flaring" target="_blank">GitHub</a>.
                         </p>
                     </div>
                     <!-- End .project-info -->
