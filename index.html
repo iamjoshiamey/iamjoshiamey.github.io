@@ -88,6 +88,31 @@
             color: #3498db;
         }
 
+        /* Flaring project: full-bleed background image with white text overlay */
+        .project-flaring {
+            background: url('images/flaring.jpg') no-repeat center center;
+            background-size: cover;
+            min-height: 300px;
+        }
+        .project-flaring .project-info {
+            position: relative;
+            margin: 0;
+            padding: 30px;
+            transform: none;
+            top: auto;
+            background: rgba(0, 0, 0, 0.55);
+            min-height: 300px;
+        }
+        .project-flaring .project-info h3 {
+            color: #fff;
+        }
+        .project-flaring .project-info p {
+            color: #e8e8e8;
+        }
+        .project-flaring .project-info a {
+            color: #a0cfee;
+        }
+
         /* Subtle accent underline on section headings */
         .heading::after {
             content: '';
@@ -259,11 +284,7 @@
                 </div>
                 <!-- End .project (featured) -->
 
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/flaring.jpg" height="350" alt="Permian Basin Flaring" />
-                    </div>
-                    <!-- End .project-image -->
+                <div class="project shadow-large no-image project-flaring">
                     <div class="project-info">
                         <h3>Flaring in the Permian: What Satellites See and What Operators Report</h3>
                         <p>
